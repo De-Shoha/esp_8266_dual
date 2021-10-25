@@ -1,0 +1,77 @@
+<!--- This software is licensed under the MIT License: https://github.com/spacehuhntech/esp8266_deauther -->
+
+<!Doctype html>
+<html>
+	<div id='stars'></div>
+	<div id='stars2'></div>
+	<div id='stars3'></div>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.8, minimal-ui">
+	<meta name="theme-color" content="#36393E">
+
+	<meta name="description" content="ESP8266 Deauther">
+	<title>ESP8266 Deauther</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	
+	<script src="js/site.js"></script>
+	<script src="js/settings.js"></script>
+</head>
+
+<body>
+	<div id="status"></div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<pre>
+  .:: ::              .::    .::                              
+.::    .::            .::    .::   .:                         
+ .::         .::    .:.: .:.:.: .:   .:: .::     .::    .:::: 
+   .::     .:   .::   .::    .::  .:: .::  .:: .::  .::.::    
+      .:: .::::: .::  .::    .::  .:: .::  .::.::   .::  .::: 
+.::    .::.:          .::    .::  .:: .::  .:: .::  .::    .::
+  .:: ::    .::::      .::    .:: .::.:::  .::     .:: .:: .::
+                                                .::           
+
+
+				</pre>
+				<nav class="nav">
+					<ul class="menu">
+						<li><a  class="active"href="settings.html">Settings</a></li>
+						<li><a href="ssids.html">SSIDs</a></li>
+						<li><a href="scan.html">Scan</a></li>
+						<li><a  href="attack.html" >Attack</a></li>
+					</ul>
+				</nav>
+				<br>
+
+
+				<button
+					onclick="getFile('run?cmd=stopap');alert('Turning off access point now. Restart your Deauther to be able to connect again.')"
+					class="red">WiFi off</button>
+				<button onclick="getFile('run?cmd=reset;;save settings')" class="red"
+					>Reset</button>
+				<button onclick="getFile('run?cmd=reboot')" class="red right">reboot</button>
+
+				<p>
+					<span class="red" >INFO:</span><br>
+					<span >
+						- Some settings require a reboot.<br>
+						- Click save to make sure that your changes are applied.<br>
+					</span>
+				</p>
+
+				<button onclick="save()" >save</button>
+				<button onclick="load()" class="right">reload</button>
+			</div>
+		</div>
+
+		<div id="settingsList"></div>
+	</div>
+	<footer class="footer"><div class="centered">version 14.7.9</div></footer>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!--- This software is licensed under the MIT License: https://github.com/spacehuhntech/esp8266_deauther -->
+
+<!Doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.8, minimal-ui">
+	<meta name="theme-color" content="#36393E">
+
+	<meta name="description" content="ESP8266 Deauther">
+	<title>ESP8266 Deauther</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<div id='stars'></div>
+	<div id='stars2'></div>
+	<div id='stars3'></div>
+	<script src="js/site.js"></script>
+	<script src="js/ssids.js"></script>
+</head>
+
+<body>
+	
+	<div id="status"></div>
+
+	<div class="container">
+		<div class="row">
+			<pre>
+                                     
+		.M"""bgd  .M"""bgd `7MMF'`7MM"""Yb.   
+		,MI    "Y ,MI    "Y   MM    MM    `Yb. 
+		`MMb.     `MMb.       MM    MM     `Mb 
+		  `YMMNq.   `YMMNq.   MM    MM      MM 
+		.     `MM .     `MM   MM    MM     ,MP 
+		Mb     dM Mb     dM   MM    MM    ,dP' 
+		P"Ybmmd"  P"Ybmmd"  .JMML..JMMmmmdP'   
+				 
+			</pre>
+		</div>
+		<nav class="nav">
+			<ul class="menu">
+				<li><a href="settings.html">Settings</a></li>
+				<li><a class="active" href="ssids.html">SSIDs</a></li>
+				<li><a href="scan.html">Scan</a></li>
+				<li><a  href="attack.html" >Attack</a></li>
+			</ul>
+		</nav>
+		<br>
+		<div class="row">
+			<div class="col-6">
+				<label for="ssid">SSID</label>
+			</div>
+			<div class="col-6">
+				<input type="text" id="ssid" name="ssid" placeholder="SSID" maxlength="32">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6">
+				<label>WPA2</label>
+			</div>
+			<div class="col-6">
+				<label class='checkBoxContainer'><input id="enc" type='checkbox'><span class='checkmark'></span></label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6">
+				<label>Number</label>
+			</div>
+			<div class="col-6">
+				<input id="ssidNum" type="number" value="1" max="60" min="1">
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6">
+				<label>Overwrite</label>
+			</div>
+			<div class="col-6">
+				<label class='checkBoxContainer'><input id="overwrite" type='checkbox' checked><span
+						class='checkmark'></span></label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<button onclick="add()">add</button>
+				<button onclick="addSelected()">clone selected APs</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<button onclick="load()" class="right">Reload</button>
+				
+				<hr>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6">
+				<label for="interval">Time Interval</label>
+			</div>
+			<div class="col-6">
+				<input id="interval" name="interval" type="number" value="10" max="600" min="1">s
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<button onclick="enableRandom()" id="randomBtn">Enable Random Mode</button>
+				<p>Enable the random mode to generate a random SSID list in a given
+					interval.</p>
+				<hr>
+				<table id="ssidTable"></table>
+				<button onclick="removeAll()" style="color: rgb(255, 0, 0);">Remove All</button>
+			</div>
+		</div>
+	</div>
+	<br><br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<footer ><div class="centered"><a href="index.html" class="footer">Version 14.7.9</a></div></footer>
+</body>
+
+</html>

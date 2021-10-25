@@ -1,0 +1,118 @@
+<!--- This software is licensed under the MIT License: https://github.com/spacehuhntech/esp8266_deauther -->
+
+<!Doctype html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=0.8, minimal-ui">
+	<meta name="theme-color" content="#36393E">
+
+	<meta name="description" content="ESP8266 Deauther">
+	<title>ESP8266 Deauther</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<div id='stars'></div>
+	<div id='stars2'></div>
+	<div id='stars3'></div>
+	<script src="js/site.js"></script>
+	<script src="js/scan.js"></script>
+</head>
+
+<body>
+	
+
+	<div id="status"></div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+			
+			<pre class="centered" style="color: rgba(135, 207, 0, 0.63);">
+ ::::::::   ::::::::       :::     ::::    ::: 
+:+:    :+: :+:    :+:    :+: :+:   :+:+:   :+: 
++:+        +:+          +:+   +:+  :+:+:+  +:+ 
++#++:++#++ +#+         +#++:++#++: +#+ +:+ +#+ 
+	+#+ +#+     +#+ +#+     +#+ +#+     +#+ 
+#+#    #+# #+#    #+# #+#     #+# #+#    #+#+#
+ ########   ########  ###     ### ###     #### 
+				</pre>	
+				<nav class="nav">
+					<ul class="menu"  >
+						<li><a href="settings.html">Settings</a></li>
+						<li><a href="ssids.html">SSIDs</a></li>
+						<li><a class="active" href="scan.html">Scan</a></li>
+						
+						<li><a href="attack.html" >Attack</a></li>
+						
+					</ul>
+				</nav>
+				<br>
+				<button id=scanZero onclick="scan(0)">Scan APs</button>
+				<button id=scanOne onclick="scan(1)">Scan Stations</button>
+				<button id=RButton onclick="load()"class="right">Reload</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6">
+				<label for="ch" >Channel</label>
+			</div>
+			<div class="col-6">
+				<select id="ch" name="ch">
+					<option value="all" >All</option>
+					<option value="1">1</option>
+					<option value="2">2</option>
+					<option value="3">3</option>
+					<option value="4">4</option>
+					<option value="5">5</option>
+					<option value="6">6</option>
+					<option value="7">7</option>
+					<option value="8">8</option>
+					<option value="9">9</option>
+					<option value="10">10</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+					<option value="13">13</option>
+					<option value="14">14</option>
+				</select>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6">
+				<label >Station Scan Time</label>
+			</div>
+			<div class="col-6">
+				<input type="number" value="15" id="scanTime">s
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+
+				<hr>
+
+				<h2><span>Access Points</span>: <span id="apNum"></span></h2>
+				<table id="apTable"></table>
+				<button onclick="selectAll(0,true)">select all</button>
+				<button onclick="selectAll(0,false)">deselect all</button>
+
+				<hr>
+
+				<h2><span>Stations</span>: <span id="stNum"></span></h2>
+				<table id="stTable"></table>
+				<button onclick="selectAll(1,true)" >select all</button>
+				<button onclick="selectAll(1,false)" >deselect all</button>
+
+				<hr>
+
+				<h2><span >Saved Devices</span>: <span id="nNum"></span></h2>
+				<table id="nTable"></table>
+				<button onclick="selectAll(2,true)">select all</button>
+				<button onclick="selectAll(2,false)" >deselect all</button>
+				<button onclick="add(2)" >new</button>
+			</div>
+		</div>
+	</div>
+	<footer class="footer"><div class="centered">version 14.7.9</div></footer>
+</body>
+
+</html>
